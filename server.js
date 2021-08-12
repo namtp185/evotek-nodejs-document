@@ -32,7 +32,12 @@ app.get('/', (req, res) => {
     res.json(data);
   });
 
-})
+});
+
+const path = require("path");
+const dir = path.join(__dirname, 'public');
+
+app.use(express.static(dir));
 
 app.listen(port, () => {
   console.log(`server listening or port ${port}`);
